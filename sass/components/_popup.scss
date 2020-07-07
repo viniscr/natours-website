@@ -4,12 +4,18 @@
     position: fixed;
     top: 0;
     left: 0;
-    background-color: rgba($color-black, .8);
+    background-color: rgba($color-black, .3);
     z-index: 9999;
     opacity: 0;
     visibility: hidden;
     transition: all .3s;
 
+
+    @supports (-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px)) {
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);    
+    }
+   
     &__content {
         @include absCenter;
 
@@ -22,11 +28,21 @@
         opacity: 0;
         transform: translate(-50%, -50%) scale(.25);
         transition: all .4s .2s;
+        
+        @include respond(phone) {
+            display: block;
+            position: relative;
+        }
     }
 
     &__left {
         width: 33.3333333%;
         display: table-cell;
+
+        @include respond(phone) {
+            display: block;
+            width: 100%;
+        }
     }
 
     &__right {
@@ -34,11 +50,31 @@
         display: table-cell;
         vertical-align: middle;
         padding: 3rem 5rem;
+
+        @include respond(phone) {
+            .heading-secondary{
+                font-size:2rem;
+            }
+        
+            .heading-tertiary{
+                font-size: 1.2rem;
+            }
+            width:90%;
+            padding: 5rem 2rem;
+            text-align: center;
+        }
     }
 
     &__img {
         display: block;
         width: 100%;
+
+        @include respond(phone) {
+            &-1 {
+                display: none;
+            }
+            height: 50%;
+        }
     }
 
     &__text {
@@ -57,6 +93,11 @@
         -ms-hyphens: auto;
         -webkit-hyphens: auto;
         hyphens: auto;
+
+        @include respond(phone) {
+            column-count: 1;
+            font-size: 1.3rem;
+        }
     }
 
     &:target {
