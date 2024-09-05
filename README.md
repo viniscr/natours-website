@@ -27,7 +27,7 @@ Run it on your live server or just open the index.html file
 
 👤 **Vinícius Barbosa**
 
-* Website: viniscr.github.io
+* Website: https://viniscr.github.io
 * Github: [@viniscr](https://github.com/viniscr)
 * LinkedIn: [@vinicius-barbosa](https://linkedin.com/in/vinicius-barbosa)
 
